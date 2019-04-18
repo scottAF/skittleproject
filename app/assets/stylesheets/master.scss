@@ -1,5 +1,15 @@
 @import "bootstrap";
 
+body {
+  background: image_url('ep_naturalwhite.png');
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin:0;
+  padding:0;
+}
+
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -12,7 +22,7 @@
   padding: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin:0;
-  padding:0;
+.navbar {
+  background: image_url('mosaic.png');
+  box-shadow: 20px 20px 50px 15px grey;
 }
