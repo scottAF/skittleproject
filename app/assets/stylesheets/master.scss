@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Neuton:700');
 
 body {
   background: image_url('ep_naturalwhite.png');
@@ -25,4 +26,10 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
   background: image_url('mosaic.png');
   box-shadow: 20px 20px 50px 15px grey;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #C1A657;
+  font-family: 'Neuton', serif;
+  font-size: 26px;
 }
