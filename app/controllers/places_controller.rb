@@ -15,5 +15,6 @@ class PlacesController < ApplicationController
 
   def place_params
     params.require(:place).permit(:name, :address, :description)
+  end
 
 end  
