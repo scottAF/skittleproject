@@ -23,10 +23,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px; 
   padding: 20px;
 }
-
 .navbar {
   background: image_url('mosaic.png');
-  box-shadow: 20px 20px 50px 15px grey;
+  box-shadow: 20px 20px 50px 15px #c0c0c0;
 }
 
 a.nav-link {
@@ -73,4 +72,3 @@ a.nav-link {
 .digg_pagination a:hover, .digg_pagination a:focus {
   text-decoration: underline; 
   }
-
