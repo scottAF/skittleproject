@@ -10,8 +10,6 @@
   <div class="edit-btn">
     <% if current_user && current_user == @places.user %>
       <%= link_to 'Edit', edit_place_path(@places), class: 'btn btn-primary' %>
-    <% end %>
-    <% if current_user && current_user == @places.user %>
       <%= link_to 'Destroy', place_path(@places), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
     <% end %>
   </div>
