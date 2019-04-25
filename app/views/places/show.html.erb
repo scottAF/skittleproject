@@ -7,6 +7,29 @@
   <br />
   <p><%= @places.description %></p>
   <br />
+
+  <script>
+    function initMap() {
+      var myLatLng = {lat: <%= @places.latitude %>, lng: <%= @places.longitude %>};
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmobU_mY-88PS2226F6pWNEOXRU7U8BKQ=initMap">
+  </script>
+  <div id="map"></div>
+
+
   <div class="edit-btn">
     <% if current_user && current_user == @places.user %>
       <%= link_to 'Edit', edit_place_path(@places), class: 'btn btn-primary' %>
