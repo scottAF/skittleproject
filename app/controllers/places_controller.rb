@@ -25,14 +25,14 @@ class PlacesController < ApplicationController
 
   def edit
     @place = Place.find(params[:id])
-    if @places.user != current_user
+    if @place.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
     end
   end
 
   def update
     @place = Place.find(params[:id])
-    if @places.user != current_user
+    if @place.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
     end    
 
@@ -46,7 +46,7 @@ class PlacesController < ApplicationController
 
   def destroy
     @place = Place.find(params[:id])
-    if @places.user != current_user
+    if @place.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
     end
     @place.destroy
