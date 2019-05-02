@@ -35,13 +35,11 @@
     <div id="map"></div>
   <% end %>
 
+<!-- Photo -->
   <h1>Photos</h1>
   <% @place.photos.each do |photo| %>
-    <div>
-      <blockquote>
-        <b><%= photo.caption %></b>
-      </blockquote>
-    </div>
+    <%= image_tag photo.picture.url %>
+    <%= photo.caption %>      
   <% end %>
 
   <br />
@@ -54,7 +52,9 @@
   </div>
 </div>
 
+<!-- Photo -->
 <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.input :picture %>
   <%= f.input :caption %>
   <%= f.submit "Add Photo", class: 'btn btn-primary' %>
 <% end %>
