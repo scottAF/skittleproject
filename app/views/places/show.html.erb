@@ -36,11 +36,12 @@
   <% end %>
 
 <!-- Photo -->
-  <h1>Photos</h1>
+<h1>Photos</h1>
   <% @place.photos.each do |photo| %>
     <%= image_tag photo.picture.url %>
     <%= photo.caption %>      
   <% end %>
+  
 
   <br />
 
