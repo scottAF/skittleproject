@@ -7,13 +7,6 @@
   <br />
   <p><%= @place.description %></p>
   <br />
-  
-  <!-- Photo -->
-<% @place.photos.each do |photo| %>
-  <%= image_tag photo.picture.url %>
-  <%= photo.caption %>
-  
-<% end %>
 
   <% if @place.latitude.present? && @place.longitude.present? %>
 
@@ -43,7 +36,6 @@
   <% end %>
 
 
-
   <div class="edit_btn">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
@@ -53,14 +45,30 @@
 </div>
 
 <!-- Photo -->
-<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-  <%= f.input :picture %>
-  <%= f.input :caption %>
-  <%= f.submit "Add Photo", class: 'btn btn-primary' %>
-<% end %>
+<div class="modal fade" id="myPModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">x</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
+      </div>
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <div class="modal-body">
+          <%= f.input :picture %>
+          <%= f.input :caption %>
+        </div>                   
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-
-<!-- Modal -->
+<!-- Comment Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -83,6 +91,43 @@
     </div>
   </div>
 </div>
+
+  <!-- Photo -->
+  <div class="col-10 offset-1">
+    <h1 class="float-left">Photos</h1>
+  <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myPModal">
+    Add a Photo
+    </button>
+  </div>
+
+  <div class="clear"></div>
+  <br />
+  <br />
+    <div class="slideshow-container">
+      <% @place.photos.each do |photo| %>
+        <div class="mySlides img-fluid" alt=" Responsive image">
+          <%= image_tag photo.picture.url %>
+          <div class="captionText">
+            <%= photo.caption %>
+          </div>
+        </div>
+      <% end %>
+        <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+
+<div class="clear"></div>
 
 <div class="col-10 offset-1">
   <h1 class="float-left">Comments</h1>
@@ -107,4 +152,5 @@
       </div>
     <% end %>  
   </div>
-
+<div class="clear"></div>
+<br />
