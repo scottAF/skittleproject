@@ -123,10 +123,11 @@ a.nav-link {
 * {box-sizing:border-box}
 
 .slideshow-container {
-  max-width: 1000px;
+  height: 480px;
   position: relative;
   margin: auto;
   width: 100%;
+  max-width: 854px
 }
 
 .captionText {
@@ -142,7 +143,6 @@ a.nav-link {
 /* Hide the images by default */
 .mySlides {
   display: none;
-  text-align: center;
 }
 
 /* Next & previous buttons */

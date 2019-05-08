@@ -104,10 +104,10 @@
   <div class="clear"></div>
   <br />
   <br />
-    <div class="slideshow-container position-relative">
+    <div class="slideshow-container img-fluid">
       <% @place.photos.each do |photo| %>
-        <div class="mySlides img-fluid" alt=" Responsive image">
-          <%= image_tag photo.picture.url %>
+        <div class="mySlides img-fluid">
+          <%= image_tag photo.picture.url class: 'd-block img-responsive'  %>
           <div class="captionText">
             <%= photo.caption %>
           </div>
