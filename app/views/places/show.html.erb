@@ -104,8 +104,8 @@
   <br />
     <div class="slideshow-container">
       <% @place.photos.each do |photo| %>
-        <div class="mySlides img-fluid" alt="img-responsive">
-          <%= image_tag photo.picture.url %>
+        <div class="mySlides img-fluid" style="width:100%">
+          <%= image_tag photo.picture.url, class: 'mx-auto d-block' %>
           <div class="captionText">
             <%= photo.caption %>
           </div>

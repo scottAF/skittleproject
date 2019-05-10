@@ -123,10 +123,8 @@ a.nav-link {
 * {box-sizing:border-box}
 
 .slideshow-container {
-  height: 480px;
   position: relative;
   margin: auto;
-  width: 100%;
   max-width: 854px
 }
 
@@ -143,8 +141,6 @@ a.nav-link {
 /* Hide the images by default */
 .mySlides {
   display: none;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Next & previous buttons */
