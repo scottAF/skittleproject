@@ -102,10 +102,10 @@
   <div class="clear"></div>
   <br />
   <br />
-    <div class="slideshow-container img-fluid">
+    <div class="slideshow-container">
       <% @place.photos.each do |photo| %>
-        <div class="mySlides img-fluid">
-          <%= image_tag photo.picture.url class: 'd-block img-responsive'  %>
+        <div class="mySlides img-fluid" alt="img-responsive">
+          <%= image_tag photo.picture.url %>
           <div class="captionText">
             <%= photo.caption %>
           </div>
@@ -123,6 +123,8 @@
       <span class="dot" onclick="currentSlide(2)"></span> 
       <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
+
+
 
 <div class="clear"></div>
 
