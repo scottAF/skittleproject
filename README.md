@@ -1,24 +1,9 @@
-# README
+Skittle Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Yelp like application allows users to pin and share places they have been. With abilities like adding comments and uploading pictures, users can share the good and bad of where they have been and what they experienced. The geocoder add-on allows visability of the places location.
 
-Things you may want to cover:
+Languages: Ruby, JavaScript, HTML, SCSS
 
-* Ruby version
+Frameworks & Technologies: ROR, jQuery, Bootstrap, JSON
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Methodologies & Paradigms: OOP, DRY
